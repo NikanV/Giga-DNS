@@ -8,7 +8,7 @@ This technique enables secure communication by leveraging the DNS protocol, ofte
 
 To run Giga-DNS, use the following command-line arguments:
 
-```bash
+```
 sudo python3 main.py --mode {client,server} [--local LOCAL] [--remote REMOTE] [--subnet SUBNET]
 
 Options:
@@ -21,17 +21,17 @@ Options:
 ### Example commands
 
 Run as a client:
-```bash
+```
 sudo python3 main.py -m client -l 0.0.0.0:7070 -r 5.34.192.13:9091 -s 172.16.0.2/24
 ```
 Run as a server:
-```bash
+```
 sudo python3 main.py -m server -l 0.0.0.0:9091 -s 172.16.0.1/24
 ```
 
 ## Installation
 
 To install the required dependencies:
-```bash
+```
 pip install -r requirements.txt
 ```
