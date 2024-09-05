@@ -34,7 +34,7 @@ def check_args(parser, args):
     if args.mode == "server" and args.remote is not None:
         main_logger.warning("Remote address is ignored! (Server Mode)")
         
-    if args.subnet != parser.get_def("subnet"):
+    if "172.16.0" not in args.subnet:
         main_logger.warning("Changing the subnet may cause some issues!")
     
     return True
