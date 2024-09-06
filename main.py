@@ -26,7 +26,7 @@ def setup_tun(mode, subnet, remote, tun_name="giga-dns"):
     
     return t
 
-def check_args(parser, args):
+def check_args(args):
     if args.mode == "client" and args.remote is None:
         main_logger.critical("You should specify a remote address! (Client Mode)")
         return False
@@ -49,10 +49,9 @@ def cleanup(mode, remote):
 
 def main():
     try:
-        parser = ArgParser()
-        args = parser.parse()
+        args = ArgParser().parse()
         
-        if not check_args(parser, args):
+        if not check_args(args):
             return
         
         tun = setup_tun(args.mode, args.subnet, args.remote)
